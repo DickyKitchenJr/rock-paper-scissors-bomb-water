@@ -1,21 +1,24 @@
-import { useState } from 'react'
-import './App.css'
-import AreYouReadyToPlay from './components/AreYouReadyToPlay'
+import { useState } from "react";
+import "./App.css";
+import AreYouReadyToPlay from "./components/AreYouReadyToPlay.tsx";
+import Game from "./components/Game.tsx";
 
 function App() {
-  const [readyToPlay, setReadyToPlay] = useState(false)
+  const [readyToPlay, setReadyToPlay] = useState(false);
 
   const handleReadyToPlay = () => {
-    setReadyToPlay(true)
-  }
+    setReadyToPlay(true);
+  };
 
   return (
     <>
-      {!readyToPlay ? 
-      <AreYouReadyToPlay onReady={handleReadyToPlay} />
-      : null}
+      {!readyToPlay ? (
+        <AreYouReadyToPlay onReady={handleReadyToPlay} />
+      ) : (
+        <Game />
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
