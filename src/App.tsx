@@ -11,13 +11,13 @@ function App() {
   };
 
   return (
-    <>
+    <main>
       {!readyToPlay ? (
         <AreYouReadyToPlay onReady={handleReadyToPlay} />
       ) : (
         <Game />
       )}
-    </>
+    </main>
   );
 }
 

@@ -1,82 +1,39 @@
+import { useState, useEffect } from "react";
+import StartOfBattle from "./StartOfBattle";
+
+const CHOICE_OPTIONS = ["bomb", "paper", "rock", "scissors", "water"];
+
 function Game() {
-  const battleResults = (computerChoice: string, playerChoice: string) => {
-    switch (playerChoice) {
-      case "rock":
-        switch (computerChoice) {
-          case "rock":
-            return "tie";
-          case "paper":
-            return "lose";
-          case "scissors":
-            return "win";
-          case "bomb":
-            return "lose";
-          case "water":
-            return "win";
-        }
-        break;
-      case "paper":
-        switch (computerChoice) {
-          case "rock":
-            return "win";
-          case "paper":
-            return "tie";
-          case "scissors":
-            return "lose";
-          case "bomb":
-            return "lose";
-          case "water":
-            return "win";
-        }
-        break;
-      case "scissors":
-        switch (computerChoice) {
-          case "rock":
-            return "lose";
-          case "paper":
-            return "win";
-          case "scissors":
-            return "tie";
-          case "bomb":
-            return "win";
-          case "water":
-            return "lose";
-        }
-        break;
-      case "bomb":
-        switch (computerChoice) {
-          case "rock":
-            return "win";
-          case "paper":
-            return "win";
-          case "scissors":
-            return "lose";
-          case "bomb":
-            return "tie";
-          case "water":
-            return "lose";
-        }
-        break;
-      case "water":
-        switch (computerChoice) {
-          case "rock":
-            return "lose";
-          case "paper":
-            return "lose";
-          case "scissors":
-            return "win";
-          case "bomb":
-            return "win";
-          case "water":
-            return "tie";
-        }
-        break;
+  const [robotChoice, setRobotChoice] = useState<string>("");
+  const [playerChoice, setPlayerChoice] = useState<string>("");
+  const [roundNumber, setRoundNumber] = useState(0);
+
+  useEffect(() => {
+    if (roundNumber > 0 && playerChoice !== "") {
+      const randomIndex = Math.floor(Math.random() * CHOICE_OPTIONS.length);
+      setRobotChoice(CHOICE_OPTIONS[randomIndex]);
     }
+  }, [playerChoice, roundNumber]);
+
+  const onPlayerChoiceChange = (choice: string) => {
+    setRobotChoice("");
+    setPlayerChoice(choice);
+    setRoundNumber((currentRoundNumber) => currentRoundNumber + 1);
+  };
+
+  const onResetRound = () => {
+    setRobotChoice("");
+    setPlayerChoice("");
   };
 
   return (
     <>
-      <h1>Game</h1>
+      <StartOfBattle
+        robotChoice={robotChoice}
+        selectedChoice={playerChoice}
+        onSelectChoice={onPlayerChoiceChange}
+        onResetRound={onResetRound}
+      />
     </>
   );
 }

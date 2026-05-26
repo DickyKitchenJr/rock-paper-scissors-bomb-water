@@ -1,0 +1,119 @@
+.start-of-battle-h1 {
+  font-family: "Frijole", cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media only screen and (min-width: 700px){
+    .start-of-battle-h1 {
+        font-size: 3rem;
+    }
+}
+
+.battle-select {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.battle-robot-image {
+  height: auto;
+  max-width: 320px;
+  width: 100%;
+}
+
+.battle-carousel {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-track {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.carousel-card-shell {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.carousel-card-shell-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-card-shell-side {
+  opacity: 0.55;
+  transform: scale(0.88);
+}
+
+.carousel-card-image {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  height: auto;
+  max-width: 220px;
+  width: 100%;
+}
+
+.carousel-card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.carousel-nav,
+.carousel-select {
+  background: #1f2937;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+}
+
+.carousel-nav:hover,
+.carousel-select:hover {
+  background: #111827;
+}
+
+.carousel-selected {
+  font-weight: 700;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+@media (max-width: 700px) {
+  .battle-carousel {
+    gap: 0.5rem;
+  }
+
+  .carousel-track {
+    gap: 0.35rem;
+  }
+
+  .carousel-card-shell-side {
+    display: none;
+  }
+
+  .carousel-card-image {
+    max-width: 170px;
+  }
+
+  .carousel-nav,
+  .carousel-select {
+    font-size: 0.85rem;
+    padding: 0.55rem 0.8rem;
+  }
+}

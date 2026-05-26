@@ -1,19 +1,15 @@
-@font-face {
-  font-family: "Frijole";
-  src: url("../assets/fonts/Frijole-Regular.ttf") format("truetype");
-}
-
-.hero-outer-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
+.hero-outer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-h1 {
   font-family: "Frijole", cursive;
   font-size: 3rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .hero-image {
@@ -27,20 +23,21 @@
   padding-top: 1rem;
 }
 
-.hero-button{
-    font-family: "Frijole", cursive;
-    font-size: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.hero-button {
+  font-family: "Frijole", cursive;
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.3s;
 }
 
 .yes:hover {
-    background-color: #4bf174;
+  background-color: #3b8a4f;
 }
 
 .no:hover {
-    background-color: #ff6666;
+  background-color: #c52323;
 }
