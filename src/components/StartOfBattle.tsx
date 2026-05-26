@@ -3,7 +3,6 @@ import BattleResult from "./BattleResult";
 import RobotWelcoming from "../assets/images/robot-character/robot-welcoming.webp";
 import RobotAngry from "../assets/images/robot-character/robot-angry.webp";
 import RobotCelebrating from "../assets/images/robot-character/robot-celebrating.webp";
-import RobotBored from "../assets/images/robot-character/robot-bored.webp";
 import RobotImpatient from "../assets/images/robot-character/robot-impatient.webp";
 import BombCard from "../assets/images/bomb-character/bomb-card.webp";
 import PaperCard from "../assets/images/paper-character/paper-card.webp";
